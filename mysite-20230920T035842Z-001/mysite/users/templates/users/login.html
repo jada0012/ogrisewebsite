@@ -1,0 +1,38 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+    <!-- <div class ="content-section">
+        <form method="post">
+            {% csrf_token%}
+            <fieldset>
+                <legend>Login</legend>
+
+                <p class="card-text">{{form.as_p}}</p>
+            </fieldset>
+            <div>
+                <button type="submit">submit</button>
+            </div>
+        </form>
+
+        <div>
+            <small>don't have an account? <a href="{% url 'register' %}">register</a></small>
+        </div>
+
+    </div> -->
+    <div class="card">
+        <div class="mx-auto" style="width: 400px;">
+            <form method="post">
+                {% csrf_token%}
+    
+                <h3>Login</h3>
+                <p>{{form.as_p}}</p>
+                <div>
+                    <button type="submit">submit</button>
+                </div>
+    
+            </form>
+    
+        </div>
+    </div>
+  
+  
+{% endblock content%}

@@ -1,0 +1,23 @@
+{% extends 'blog/base.html'%}
+
+{%block content%}
+<h1>{{engage.title}}</h1>
+ <br>
+
+<div class="cent">
+    <div class="card">
+        {{engage.body | safe}}
+        <br><br>
+    
+        <a href="{% url 'resource-list'%}" class="linkbutton">back</a>
+
+    </div>
+ 
+
+
+
+</div>
+
+
+{%endblock%}
+

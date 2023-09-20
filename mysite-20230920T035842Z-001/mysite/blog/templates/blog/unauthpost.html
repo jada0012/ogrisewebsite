@@ -1,0 +1,18 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+<h1>UNAUTHENTICATED BLOG POSTS</h1>
+<ul>
+{%for post in object_list%}
+    {% if post.authenticated == False %}
+        <li><h3>{{post.title}} by {{post.author}}</h3><br>
+        {{post.body|slice:":200"}}... </li> <br>
+        <a href="{% url 'article-queue' %}">Read more</a>
+        <input type="checkbox", name="c{{item.id}}",value="clicked" >
+        <!-- todo: make this actually save (i think i need to use a form) -->
+
+
+            
+    {%endif%}
+{%endfor%}
+{%endblock%}
+</ul>

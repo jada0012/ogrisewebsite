@@ -1,0 +1,23 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+<h1>HOW TO GET INVOLVED</h1>
+
+<div class="cent">
+
+    {% for engage in object_list %}
+            <div class="card">
+                <h2>{{engage.title}}</h2>
+                <p class="card-text text-muted h6">{{ engage.created_on}} </p>
+                <p class="card-text">{{engage.body|slice:":200" | safe}}</p>
+                <a href="{% url 'involvement-detail' engage.slug %}" class="linkbutton">Read more</a>
+
+            </div>
+           
+
+    {% endfor %}
+</div>
+
+
+
+
+{% endblock %}

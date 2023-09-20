@@ -1,0 +1,19 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+<h1>BLOG POSTS</h1>
+
+<div class="cent">
+    {% for post in object_list%}
+        <div class="card">
+            <h2>{{post.title}}</h2>
+            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
+            <p class="card-text">{{post.body|slice:":200" | safe}}</p>
+            <a href="{% url 'article-detail' post.id %}" class="linkbutton">Read more</a> 
+
+        </div>
+    {% endfor %}
+
+</div>
+    
+
+{%endblock%}

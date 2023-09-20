@@ -1,0 +1,36 @@
+{% extends 'blog/base.html'%}
+{% block content %}
+<h1>recent articles</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 mt-3 ">
+                
+                {% for post in posts %}
+                    <!-- {% if post.authenticated == True %} -->
+                    
+                    <div class="card mb-3 center">
+                        <div class="card-body">
+                            <h2 class="card-title">{{post.title}}</h2>
+                            <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}}</p>
+                            <p class="card-text">{{post.body | slice:"200"}}</p>
+                            <br>
+                            <a href="{% url 'article-list'%}" class="linkbutton">see all articles</a>
+
+                        </div>
+
+                    </div>
+                    <!-- {% endif %} -->
+                {% endfor %}
+
+
+            </div>
+        </div>
+    </div>
+
+   
+        
+    
+  
+        
+    
+{% endblock%}

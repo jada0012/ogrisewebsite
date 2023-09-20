@@ -1,0 +1,14 @@
+{% extends 'blog/base.html'%}
+{% block content%}
+<h1>add post</h1>
+<div class="cent">
+    <form method="post">
+        {%csrf_token%}
+        {{form.media}}
+        {{form.as_p}}
+        <button  class="linkbutton">post</button>
+    </form>
+
+</div>
+
+{% endblock%}
